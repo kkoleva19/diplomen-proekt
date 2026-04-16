@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# Вътрешно училищен чат
 
-## Project info
+## Описание на проекта
+School Connect е уеб базирано приложение, предназначено за улесняване на комуникацията и обмена на учебни ресурси в училищната среда. Основната цел на проекта е да предостави централизирана платформа, чрез която учители и ученици могат да взаимодействат лесно, бързо и ефективно.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Тема и функционалности
+Платформата поддържа следните основни възможности:
+- **Чат система**: Комуникация в реално време между потребителите (учители и ученици) с модерен дизайн.
+- **Учебни материали**: Възможност за учители да качват учебни ресурси, разпределени по предмети, и за учениците да ги изтеглят.
+- **Административен панел**: Анализиране на активността, доклади, както и управление на потребителите.
+- **Автентикация**: Сигурна система за вход и регистрация.
 
-## How can I edit this code?
+## Технологичен стек и архитектура (Структура на проекта)
 
-There are several ways of editing your application.
+### Frontend (Потребителски интерфейс)
+Изграден с модерни уеб технологии за осигуряване на бърза и реактивна работа:
+- **React** с **TypeScript** - за изграждане на компонентно ориентиран и типово-сигурен потребителски интерфейс.
+- **Vite** - инструмент за супер бързо компилиране и стартиране на средата за разработка.
+- **Tailwind CSS** & **shadcn/ui** - за гъвкав, адаптивен и красив дизайн.
+- **Zustand** - за управление на глобалното състояние (State Management).
+- **React Router DOM** - за навигация между отделните страници на приложението в браузъра.
+- **React Query** - за управление на асинхронни заявки към сървъра и кеширане на данни.
 
-**Use Lovable**
+### Backend & База данни (Сървърна част)
+- **Supabase** (PostgreSQL) - използва се като Backend-as-a-Service (BaaS). Предоставя мощна релационна база данни с отворен код (PostgreSQL), както и услуги за съхранение на файлове (Storage) за учебните материали.
+- **Supabase Auth** - за сигурна аутентикация, управление на сесиите и достъпите.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Как да стартирате проекта локално
 
-Changes made via Lovable will be committed automatically to this repo.
+За да стартирате проекта на вашия компютър, следвайте тези стъпки:
 
-**Use your preferred IDE**
+### Изисквания
+- Инсталиран [Node.js](https://nodejs.org/) (препоръчително версия 18 или по-нова)
+- Инсталиран пакетен мениджър `npm`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Инструкции за стартиране
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Клонирайте или свалете хранилището**.
 
-Follow these steps:
+2. **Отворете терминал** и навигирайте до главната директория на проекта.
+   ```sh
+   cd "diplomen proekt"
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. **Инсталирайте нужните зависимости**:
+   ```sh
+   npm install
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. **Задайте променливите на средата** (Environment Variables):
+   Копирайте съществуващия файл с променливи (ако е наличен) или създайте нов файл `.env` в основната директория. Необходимо е да добавите ключовете за свързване към Supabase:
+   ```env
+   VITE_SUPABASE_URL="вашият_supabase_project_url"
+   VITE_SUPABASE_ANON_KEY="вашият_supabase_anon_key"
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+5. **Стартирайте сървъра за разработка**:
+   ```sh
+   npm run dev
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+След успешно стартиране, приложението автоматично ще се отвори или ще бъде достъпно на вашия локален адрес (най-често **http://localhost:8080**).
